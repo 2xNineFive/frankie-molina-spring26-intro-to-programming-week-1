@@ -343,6 +343,15 @@ console.log(`Q6: ${arrayChecker(full)}`);
 
 // PUT YOUR CODE HERE
 
+// alright. So i need to write a function. I added the parameters, and I think that array.integer is how, I'll access the index of that integer. The or operator will handle if that index does not exist. I will test full to meet the requirements of this challenge and empty to test the null. Hmm. It's always null. I'm going to claude to ask for help. Ohhh. I need to use the proper syntax to access an index. 
 
+const getElementAt = function (array, integer) {
+    return array[integer] || null;
+}
 
+console.log(`Q7: ${getElementAt(full, 3)}`)
+console.log(`Q7: ${getElementAt(full, 4)}`)
+console.log(`Q7: ${getElementAt(full, 5)}`)
 
+console.log(`Q7: ${getElementAt(empty, 0)}`)
+console.log(`Q7: ${getElementAt(empty, 1)}`)
