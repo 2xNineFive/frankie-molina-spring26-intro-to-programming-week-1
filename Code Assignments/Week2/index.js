@@ -330,6 +330,18 @@ console.log(`Q6: ${arrayChecker(full)}`);
 
 
 
+// ---------- QUESTION 7 ----------
+// Write a function called 'getElementAt' that takes an array parameter and an integer parameter. The function should return the element in the array at the given number index or 'null' if it doesn't exist. Use your 'full' variable from Question 6 to test.
+
+// EXAMPLE LOGS:
+//  console.log("Q7: ", getElementAt(full, 2));
+//  console.log("Q7: ", getElementAt(full, 7));
+
+// EXAMPLE OUTPUT: (if the array assigned to variable 'full' is ["dream", 19, "code", 24, 180])
+//  Q7: code
+//  Q7: null
+
+// PUT YOUR CODE HERE
 
 
 
