@@ -288,3 +288,49 @@ console.log(`Q5: ${numOfOdds(15)}`)
 
 
 // I created a global alias to git add and git commit and git push all in one command. 
+// All my code now lives inside a repo on GitHub. Ill push all my code from now on. 
+
+
+
+
+// ---------- QUESTION 6 ----------
+// Create two variables named 'empty' and 'full'. Assign an empty array to the 'empty' variable and any array of strings or numbers to the 'full' variable. Write a function called 'arrayChecker' that returns true if the array passed as a parameter is empty and false if not. Check both the 'empty' and 'full' variables to make sure they are returning the expected values.
+
+// EXAMPLE LOGS:
+//  console.log("Q6 empty: ", arrayChecker(empty));
+//  console.log("Q6 not empty: ", arrayChecker(full));
+// EXAMPLE OUTPUTS:
+//  Q6 empty: true
+//  Q6 not empty: false
+
+// PUT YOUR CODE HERE
+
+// All right. So I think what I need to do is make a function that passes in a parameter, which is going to be either the array empty or full. Then I'm going to create an if statement to test whether the length of the array is 0 or more than 0 and return true or false accordingly. 
+
+const empty = [];
+const full = [1, 2, 3, 4, 5];
+
+// const arrayChecker = function (array) {
+//     if (array.length === 0) {
+//         return true
+//     } return false;
+// }
+
+// Claude told me the code above is correct but that I could write it cleaner. It asked me how and I said ternary? That was the right idea, so I'm going to attempt that now. I showed all my attempts at writing a ternary by memory and asking Claude for help. 
+
+const arrayChecker = function (array) {
+    // if const array === 0 ? true : false; improper syntax
+    // const array.length === 0 ? true : false; improper syntax
+    // return array.length === 0 ? true : false; could be written cleaner. that conditional already returns either true or false so the ternary is unneccessary. 
+    return array.length === 0; 
+}
+
+console.log(`Q6: ${arrayChecker(empty)}`);
+console.log(`Q6: ${arrayChecker(full)}`);
+
+
+
+
+
+
+
