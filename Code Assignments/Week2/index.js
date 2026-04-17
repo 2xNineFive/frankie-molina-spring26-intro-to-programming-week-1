@@ -355,3 +355,42 @@ console.log(`Q7: ${getElementAt(full, 5)}`)
 
 console.log(`Q7: ${getElementAt(empty, 0)}`)
 console.log(`Q7: ${getElementAt(empty, 1)}`)
+
+
+
+// ---------- QUESTION 8 ----------
+// Write a function called 'insertInArray' that takes an array parameter, makes a NEW array with the value '0' inserted at the second position in the NEW array. The function should return the NEW array. Use your 'full' variable from Question 6 to test. NOTE: Assigning an array to a new variable does not make a copy, it's another reference to the same array. To make a copy you can use the slice() method as in this example:
+// let newArray = originalArray.slice()
+// LEARNING MOMENT: Also console log the variable 'full' to compare the new array to the original.
+
+// EXAMPLE LOG:
+//  console.log("Q8: ", insertInArray(full));
+//  console.log("original array: ", full);
+
+// EXAMPLE OUTPUT: (if the array assigned to variable 'full' is ["dream", 19, "code", 24, 180])
+//  Q8: ["dream", 0, 19, "code", 24, 180]
+//  original array: ["dream", 19, "code", 24, 180]
+
+// PUT YOUR CODE HERE
+
+// alright so I need to write a function that takes an array parameter. Done. I added a new empty array that can be returned once the action is complete. Oh. I reread the intructions and saw that I need to use the .slice() property. Okay so I added the `return newArray[1].push(2);` line. I think that will handle adding the number 2 as the second element of the array at index 1, which is position 2 in the array... because index 0 is position 1 of the array. Dang the console.log says that newArray[1].push is not a function. So I think I'm using the syntax wrong. I'm going to go ask Claude to help me solve this. I wrote what I learned from my attempts inside the function as comments. 
+
+// So, another thing Claude just taught me is that IMMUTABILITY is a really important concept is JS. IMMUTABILITY = not changing the original data, always working on copies. This pattern is everywhere, especially in React. I know that React is like an interface of sorts to build websites with. It helps with the DOM. I remember its more efficient. But I can still defo learn more about it. Hmm. I just submiited my response and these comments to Claude. It said I was close about React. React is a JS LIBRARY for building UIs. I got the DOM part right, it's correct because of something called the Virtual DOM, which apparently might be a copy of the orignal DOM lol, based on what I just learned haha. 
+
+// Claude says: Haha you're connecting dots in real time — the Virtual DOM is literally immutability applied to the DOM! React makes a copy, figures out what changed, then updates only the parts that need it. Instead of rebuilding the whole thing.See how these concepts stack on each other? 🧠 Right?! It all connects. Loops → arrays → immutability → React. It's one big puzzle and you're already seeing how the pieces fit. T
+
+// This is really cool. This class has been way better for me than the other Web Development Bootcamp I did. I'm really grateful that I got into this program. I'm having a blast learning here. And I cannot wait until I become a badass developer. 
+
+
+const insertInArray = function (array) {
+    let newArray = array.slice();
+    // return newArray[1].push(0); this was wrong. Im accessing the number at the index and I cant push onto a number, only an array. Claude said I need to use the splice method. 
+    // return newArray.splice(newArray[1]); again, I did not know the syntax for using this method.
+    // return newArray.splice(1, 0, 0); this returns the removed elements not the new array
+    newArray.splice(1, 0, 0);
+    return newArray;
+}
+console.log(`Q8: original: ${full}`);
+console.log(`Q8: ${insertInArray(full)}`);
+
+
