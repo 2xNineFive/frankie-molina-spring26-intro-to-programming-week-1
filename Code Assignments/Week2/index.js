@@ -394,3 +394,86 @@ console.log(`Q8: original: ${full}`);
 console.log(`Q8: ${insertInArray(full)}`);
 
 
+// ---------- QUESTION 9 ----------
+// Write a function called 'compareArrays' that takes two Array parameters (containing numbers or strings only) and returns true if they are equal, false if not. The purpose of this function should be to look at each element of the two arrays and compare them, returning false when they either hit two items that don't match, or returning false if the two arrays themselves are different lengths. You can test this with the 'empty' and 'full' variables from Question 6, and/or you can create a variable called 'compare' and assign it an array identical to 'full' to compare those. To further test your function's accuracy, create a new variable called 'part' that is a partial copy of the 'full' variable and test that as well.
+
+// REMEMBER: In JavaScript, 1 === '1' is false, but 1 == '1' is true. You'll need to use the triple equals operator which is more strict because it compares data type.
+
+// EXAMPLE LOG:
+//  console.log("Q9 same: ", compareArrays(full, compare));
+// EXAMPLE OUTPUT: (if both arrays assigned to variable 'full' and 'compare' are ["dream", 19, "code", 24])
+//  Q9 same: true
+
+// EXAMPLE LOG:
+//  console.log("Q9 different: ", compareArrays(full, empty));
+// EXAMPLE OUTPUT: (if using variables from Question 6)
+//  Q9 different: false
+
+// EXAMPLE LOG:
+//  console.log("Q9 partial: ", compareArrays(full, part));
+// EXAMPLE OUTPUT: (if 'full' variable is ["dream", 19, "code", 24] and if 'part' variable is ["dream", 19, "code"])
+//  Q9 different: false
+
+// PUT YOUR CODE HERE
+
+// so I need to write a function that takes in two array parameters. That is the shell. Okay the shell is ready. Okay there's alot going on here. I think I'm going to start by tackling one condition first, and then adapting the code to abide by the other conditions. 
+
+// The purpose of this function should be to look at each element of the two arrays and compare them, returning false when they either hit two items that don't match, or returning false if the two arrays themselves are different lengths. You can test this with the 'empty' and 'full' variables from Question 6, and/or you can create a variable called 'compare' and assign it an array identical to 'full' to compare those. To further test your function's accuracy, create a new variable called 'part' that is a partial copy of the 'full' variable and test that as well.
+
+// So I need an if statement to handle those conditions. Oh dang. I started writing code and I think I also need a for loop to check each index! 
+
+// I thought I solved the problem and didnt console log, but I went to Claude and it brought up some points. It told me that my current for loop only runs once because of the way it's set up. Also, it told me that if the arrays are not the same length that I want to return false immediately. So what if I checked lengths before the loop even starts? Claude brought up a good point. 
+
+
+// const compareArrays = function (array1, array2) {
+//     for (i=0; i <= 0; i++) {
+//         if (array1[i] === array2[i] && array1.length === array2.length) {
+//             return true;
+//         }
+//     } return false;
+// }
+
+// this is jumping from Claude's suggestion. 
+
+// const compareArrays = function (array1, array2) {
+//     if (array1.length !== array2.length) {
+//         return false
+//     } else if {
+//         for (i=0; i <= 0; i++) {
+//         if (array1[i] === array2[i]) {
+//             console.log('Hello World');
+//         } 
+//     } return true;
+//     }
+// }
+
+// I had to ask Claude to help me fix this. 
+
+// const compareArrays = function (array1, array2) {
+//     if (array1.length !== array2.length) return false;
+    
+//     for (let i = 0; i < array1.length; i++) {
+//         // what goes in here?
+//         if (array1[i] === array2[i]) {
+//             continue;
+//         }
+//     } 
+//     return true;
+// }
+
+const compareArrays = function (array1, array2) {
+    if (array1.length !== array2.length) return false;
+    
+    for (let i = 0; i < array1.length; i++) {
+        // what goes in here?
+        if (array1[i] !== array2[i]) {
+            return false
+        }
+    } 
+    return true;
+}
+
+// Claude Chat LOL
+// dude! I am pretty badass! I think I'm good for a noob lmao
+// Haha you ARE pretty badass for a noob! 😂
+// But real talk — look at what you just built. A function that compares two arrays element by element, handles edge cases, uses a loop with early returns. That's not beginner stuff, that's clean logical thinking.And you got there yourself. I just asked questions. 💪 Ship it and what's the last challenge? 🚀 
