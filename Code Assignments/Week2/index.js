@@ -642,3 +642,88 @@ const makeSquares = function (array) {
 
 console.log(`Q11: ${makeSquares(copyArray)}`);
 
+
+
+// ---------- QUESTION 13 ----------
+// Write a function called 'displaySkills' that takes an array of string values that correspond to skills that you have.
+// Iterate through the array and display each skill.
+
+// EXAMPLE CALL:
+//  const skills = ["JavaScript", "HTML", "CSS", "Adobe Photoshop", "GitHub"];
+//  displaySkills(skills);
+// EXAMPLE OUTPUT:
+//  Javascript
+//  HTML
+//  CSS
+//  Adobe Photoshop
+//  GitHub
+
+// PUT YOUR CODE HERE
+
+
+// So I need an array full of my skills, and I also need a function. 
+
+
+const skillsArray = ["JavaScript", "HTML", "CSS", "GitHub", "Git", "Prompt Engineering", "Music Production"];
+
+const displaySkills = function (array) {
+    for (let i = 0; i < array.length; i++) {
+        console.log(array[i]);
+    }
+}
+// console.log(`Q13: ${displaySkills(skillsArray)}`);
+console.log(`Q13: `)
+displaySkills(skillsArray);
+
+
+
+
+// ---------- QUESTION 14 ----------
+// Back in the "old days", the early 2000s, this was a famous technical interview question. Write a function definition that takes NO parameters. The function will loop from 1 to 15 and return an array of numbers. While looping, the function will check if the current value in the loop is divisible by 3, by 5, or by both. If the current value in the loop is divisible by 3, the function will add the string "fizz" to an array. If the current value in the loop is divisible by 5, the function will add the string "buzz" to the array. If the current value in the loop is divisible by both, the function will add the value "fizzbuzz" to the array. If the number isn't divisible by 3, 5, OR both, it will add the number to the array. The function will return the array of values.
+
+// EXAMPLE LOG:
+//  console.log("Q13: ", fizzBuzz();
+// EXAMPLE OUTPUT:
+//  Q14: [1,2,'fizz',4,'buzz','fizz',7,8,'fizz','buzz',11,'fizz',13,14,'fizzbuzz']
+
+// PUT YOUR CODE HERE
+
+// alright so im going to need a function, a loop, and somewhere to store values in an array that I can return later. Im also going to need a series of if statements. 
+
+const fizzBuzz = function () {
+    const array = [];
+    for (let i = 1; i <= 15; i++) {
+        if (i % 3 === 0 && i % 5 === 0 ) {
+            array.push(`fizzbuzz`);
+        } else if (i % 5 === 0) {
+            array.push(`buzz`);
+        } else if (i % 3 === 0) {
+            array.push(`fizz`);
+        }
+        else array.push(i);
+    }
+    return array;
+}
+
+console.log(`Q14: `, fizzBuzz());
+
+
+// Why your if/else order was smart
+// I want to highlight something you got right that trips up a lot of people:
+// javascriptif (i % 3 === 0 && i % 5 === 0) { ... }       // check BOTH first
+// else if (i % 5 === 0) { ... }
+// else if (i % 3 === 0) { ... }
+// else { ... }
+// The classic FizzBuzz bug is writing:
+// javascriptif (i % 3 === 0) push "fizz"
+// else if (i % 5 === 0) push "buzz"
+// else if (i % 3 === 0 && i % 5 === 0) push "fizzbuzz"  // ❌ never reached!
+// When i = 15, the first condition matches (it's divisible by 3), so "fizz" gets pushed and the else-ifs are skipped — "fizzbuzz" never fires. More specific conditions have to go first. You nailed that instinct. 👍
+
+// Fix those three bugs and you'll have a clean FizzBuzz. This question used to actually weed out candidates at tech interviews — the fact that you structured the logic correctly on the first try is a good sign. 💪
+
+// I am so happy that I am getting these challenges down! I'm happy with myself that I am understanding the logic. To me, that's the important part. Most of my coding challenge asnwers are 90% there. It's the final 10% I'm missing and I think that is mostly syntax and experience.
+
+// / "Logic is the hard part. Syntax is just practice."
+
+
