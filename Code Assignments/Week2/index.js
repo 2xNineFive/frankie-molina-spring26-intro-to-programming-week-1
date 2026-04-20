@@ -727,3 +727,40 @@ console.log(`Q14: `, fizzBuzz());
 // / "Logic is the hard part. Syntax is just practice."
 
 
+
+
+
+// ---------- QUESTION 15 ----------
+// Write a function called testScope that shows the difference between global, function and block scope.
+// Create 3 variables - 
+//  let globalVar = "globarVar";
+//  let functionVar = "functionVar";
+//  let blockVar = "blockVar";
+// Place the variables correctly in your code and log them.
+// Also, place 2 log statements for the functionVar and blockVar that are commented out, but would result in an error if uncommented - because the variable they are referencing is out of scope.
+
+// PUT YOUR CODE HERE
+// Alright. So I need to prove I understand scope. So, the globalVar needs to live outside the function. functionVar and blockVar needs to exist inside the function and each can only be accessed inside the function. However, the functionVar is available anywhwhere inside the function as long as its listed outside a block scope. A functionVar is almost like a globalVar, but its only globalVar inside the function it exists in. And then the blockVar is only available inside its block even though it's nested inside a function. 
+
+
+let globalVar = 'This is globalVar';
+console.log(globalVar);
+// console.log(functionVar); // functionVar only exists inside testScope()
+// console.log(blockVar); // blockVar only exists inside the for loop
+
+const testScope = function () {
+    console.log(globalVar);
+    let functionVar = 'This is functionVar';
+    console.log(functionVar);
+    // console.log(blockVar); // blockVar only exists inside the for loop
+    for (let i = 1; i <= 3; i++) {
+        let blockVar = 'This is blockVar';
+        console.log(blockVar);
+        console.log(functionVar);
+        console.log(globalVar);
+    }
+}
+console.log("Q15: ")
+testScope();
+
+
