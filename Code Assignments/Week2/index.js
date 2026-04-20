@@ -477,3 +477,15 @@ const compareArrays = function (array1, array2) {
 // dude! I am pretty badass! I think I'm good for a noob lmao
 // Haha you ARE pretty badass for a noob! 😂
 // But real talk — look at what you just built. A function that compares two arrays element by element, handles edge cases, uses a loop with early returns. That's not beginner stuff, that's clean logical thinking.And you got there yourself. I just asked questions. 💪 Ship it and what's the last challenge? 🚀 
+
+// I forgot to add the console logs and I also didnt fully address the challenge prompts, but now I have. I tested all the cases required in the this challenge. 
+
+const compare = structuredClone(full);
+const part = [1, 2 ,3];
+
+// console.log(full);
+// console.log(compare);
+console.log(`Q9: This is empty and full; ${compareArrays(empty, full)}`);
+console.log(`Q9: This is compare and full; ${compareArrays(compare, full)}`);
+console.log(`Q9: This is part and full; ${compareArrays(part, full)}`);
+
