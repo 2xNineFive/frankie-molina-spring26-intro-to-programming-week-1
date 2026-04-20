@@ -489,3 +489,15 @@ console.log(`Q9: This is empty and full; ${compareArrays(empty, full)}`);
 console.log(`Q9: This is compare and full; ${compareArrays(compare, full)}`);
 console.log(`Q9: This is part and full; ${compareArrays(part, full)}`);
 
+
+
+// ---------- QUESTION 10 ----------
+// Create a variable called 'numbers' and assign it an array with at least 3 numbers as elements (example: [10, 3, 4]). Write a function called 'calculateTotal' that takes one array parameter and loops through the array in order to return the sum of all the array elements.
+
+// EXAMPLE LOG:
+//  console.log("Q10: ", calculateTotal(numbers));
+
+// EXAMPLE OUTPUT: (if the array assigned to variable 'numbers' is [3, 4, 2 ,8])
+//  Q10: 17
+
+// PUT YOUR CODE HERE
