@@ -521,3 +521,124 @@ console.log(`Q10: ${calculateTotal(numbers)}`)
 
 
 // Claude did tell me that I could have used the for...of loop instead because it's a cleaner alternative for this pattern. I don't necessarily care about the position of the element i in the array. I care about the value at position i so I can aggregate it to sum. SO, in the future, I'll try to remember this. 
+
+
+
+
+
+// ---------- QUESTION 11 ----------
+// Write two functions called 'findEvens' and 'findOdds' that each take one array parameter and each returns a NEW Array of all the even or odd numbers as indicated. NOTE: Assigning an array to a new variable does not make a copy, it's another reference to the same array. To make a copy you can use the slice() method as in this example:
+// let newArray = originalArray.slice()
+
+// EXAMPLE LOG:
+//  console.log("Q11 evens: ", findEvens([10,2,3,19,7,6,93]));
+//  console.log("Q11 odds: ", findOdds([10,2,3,19,7,6,93]));
+
+// EXAMPLE OUTPUT:
+//  Q11 evens: [10,2,6]
+//  Q11 odds: [3,19,7,93]
+
+// PUT YOUR CODE HERE
+
+// I need two functions. One will find even numbers and the other will find odd numbers. They will both take one array parameter and each returns a new array of all the even or odd numbers from the parameter array. I created the numberBankArray to hold my numbers. Once I get the findEvens function to work, I'm going to copy that function logic to findOdds and make the necessary changes. I'm going to use an if statement in the for loop to check if the element at position i is even, and if it is, I need to push it into the result array. Wait actually I dont need result array. What if the number is odd, i just push it out of the copy of the array? I think that's a better way to not use more code!  
+
+const numberBankArray = [1, 2, 3, 4, 5 , 6, 7, 8, 9, 10]; 
+
+// const findEvens = function (array) {
+//     const thisArray = numberBankArray.slice();
+//     console.log(thisArray);
+//     for (let i = 0; i < array.length - 1; i++) {
+//         if (!array[i] % 2 ) {
+//             thisArray[i].pop();
+//         }
+//     }
+//     return thisArray
+// }
+// findEvens(numberBankArray);
+
+// Alright so this idea didnt work because I am shifting the values of i as im iterating through it, so that doesnt work. Im just going to have to push the numbers into a new array and return that. I also made mistakes in the loop conditions and in my if conditions. 
+
+
+
+const findEvens = function (array) {
+    const evens = [];
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] % 2 === 0) {
+            evens.push(array[i]);
+        }
+    }
+    return evens;
+}
+console.log(`Q11 evens: ${findEvens(numberBankArray)}`);
+
+const findOdds = function (array) {
+    const odds = [];
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] % 2 !== 0) {
+            odds.push(array[i]);
+        }
+    }
+    return odds;
+}
+console.log(`Q11 odds: ${findOdds(numberBankArray)}`);
+
+
+// Hmm I learned something interesting from Claude after submitting my code. 
+// The two functions are nearly identical, which is actually a good thing right now.
+// You followed your original plan: "get findEvens working, then copy the logic to findOdds." Classic approach. Later you'll learn about making this DRY-er (Don't Repeat Yourself), but here's a sneak peek at what that could look like down the road:
+// javascript// You'll get here in a few weeks — don't worry about this yet
+
+
+// const filterByCondition = (array, condition) => array.filter(condition);
+
+// const evens = filterByCondition(numberBankArray, num => num % 2 === 0);
+// const odds = filterByCondition(numberBankArray, num => num % 2 !== 0);
+
+// That uses arrow functions, .filter(), and callbacks — all concepts you'll hit later. Don't try to learn this now. I'm only showing it so when you encounter it in a month, you'll go "ohhh, that's the clean version of what I was doing with for-loops." Recognition is half the battle. 
+
+
+// I wish I knew how to code this cleaner way, but it's okay. I understand whats going on under the hood. And I am also a beginner. So hopefully after much practice, I learn those better ways to code. I understand what Claude recommended, so I am happy about that. Essentially it's just learning more advanced syntax. I'm happy I'm getting there. Code the Dream is really helping me get a stronghold on the language. 
+
+
+
+
+
+// ---------- QUESTION 12 ----------
+// Write a function called 'makeSquares' that takes one array parameter and returns a NEW Array with the squared values of each of the numbers. NOTE: Assigning an array to a new variable does not make a copy, it's another reference to the same array. To make a copy you can use the slice() method as in this example:
+// let newArray = originalArray.slice()
+
+// EXAMPLE LOG:
+//  console.log("Q12: ", makeSquares([2,5,8]));
+// EXAMPLE OUTPUT:
+//  Q12: [4,25,64]
+
+// PUT YOUR CODE HERE
+
+// alright so i need a function that takes one array parameter and returns a new array with the squared values of each of the numbers. Alright, so I built the shell of the function with the array parameter. So my first function wasn't working because sqauredArray needed to be on the left side fo the +=. But even if that were correct, I ran into the same issue as last time, which is that its not a good idea to add values back to an array that is being iterated over. Furthermore, I wasn't summing the values, I needed to square all the elements of the array and add them to a new array. So my new funtction addresses all those issues. 
+
+
+// const makeSquares = function (array) {
+//     const thisArray = numberBankArray.slice();
+//     let squaredArray = [];
+//     for (let i = 0; i < array.length; i++) {
+//         (array[i] * array[i]) += squaredArray;
+//     }
+//     console.log(squaredArray);
+//     return squaredArray;
+// }
+
+const copyArray = numberBankArray.slice();
+
+const makeSquares = function (array) {
+    let squaredArray = [];
+    for (let i = 0; i < array.length; i++) {
+        // squaredArray.push(array[i] * array[i]);
+        squaredArray.push(array[i] ** 2);
+        // thie line above is cleaner syntax. Claude taught me that. 
+    }
+    // console.log(squaredArray);
+    return squaredArray;
+}
+
+console.log(`Q11: ${makeSquares(copyArray)}`);
+
