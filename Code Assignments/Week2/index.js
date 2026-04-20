@@ -501,3 +501,23 @@ console.log(`Q9: This is part and full; ${compareArrays(part, full)}`);
 //  Q10: 17
 
 // PUT YOUR CODE HERE
+
+
+// SO i need to create an array called numbers and it needs min three #s. Done. Now I need a function that takes in an array as a parameter and loops through the array and sum up array elements.
+// Im going to need a variable to hold the sum. Im also going to to need for loop. And I need to return the sum. 
+
+const numbers = [100, 14, 98643];
+
+const calculateTotal = function (array) {
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        // sum ++; At first I was getting 4 in the console log. so I changed the for loop by removing <= and then after that I got 3. So then I added the code below to add the value of array element at position i to actually add the numbers correctly. I did this without AI! 
+        sum += array[i];
+    } return sum;
+}
+
+console.log(`Manual Addition to Confirm; ${100 + 14 + 98643}`);
+console.log(`Q10: ${calculateTotal(numbers)}`)
+
+
+// Claude did tell me that I could have used the for...of loop instead because it's a cleaner alternative for this pattern. I don't necessarily care about the position of the element i in the array. I care about the value at position i so I can aggregate it to sum. SO, in the future, I'll try to remember this. 
