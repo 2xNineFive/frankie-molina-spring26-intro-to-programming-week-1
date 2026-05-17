@@ -174,6 +174,29 @@ console.log("Q2 reverseString: ", string4, reverseString(string4));
 
 // Don't forget your console.logs!
 
+const billTotal1 = 20;
+const tipPercentage1 = .20;
+
+const billTotal2 = 100;
+const tipPercentage2 = .25;
+
+const billTotal3 = 100;
+const tipPercentage3 = 0;
+
+const tipCalculator = function (billTotal, tipPercentage) {
+    const result = (billTotal * tipPercentage) + billTotal;
+    return result;
+}
+
+console.log("Q3 tipCalculator: ", billTotal1, tipPercentage1, tipCalculator (billTotal1, tipPercentage1));
+console.log("Q3 tipCalculator: ", billTotal2, tipPercentage2, tipCalculator (billTotal2, tipPercentage2));
+console.log("Q3 tipCalculator: ", billTotal3, tipPercentage3, tipCalculator (billTotal3, tipPercentage3));
+
+
+
+
+
+
 
 // ---------- QUESTION 4 ----------
 // Create two variables named 'num1' and 'num2' and assign them integer values. Create a function called 'multiplyThese' that takes 2 parameters and returns the product of the two parameters (as a reminder, a product is the resulting number when two numbers are multiplied together).
