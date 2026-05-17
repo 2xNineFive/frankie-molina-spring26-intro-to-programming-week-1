@@ -54,3 +54,15 @@
 
 
 
+// Mindset Questions 
+// Please submit the following with your weekly assignment:
+// - What’s one thing that you were curious to learn more about recently (this doesn’t need to be coding-related)? How did you learn more about it?
+// - What’s one best practice you’ve learned in your first few weeks at CTD that you don’t know “the why” behind? How can you find out “the why”?
+
+// Question 1:
+// I suspected corruption regarding a recent data center proposal in my city that the council unanimously approved. I had heard rumors mentioning corruption, so I started digging. I started by looking at the proposal itself and asking Claude to analyze it and share key findings. After that, I searched for the company in the California Secretary of State database and looked at all their land purchases. What struck me was that they had been operating since 2019 and were doing business with companies that are being investigated by the SEC. Claude guided me through the process of finding documents that could prove or deny things rather than just giving me answers. Through this process I learned how to investigate government contracts, how to file CPRA requests, and how to legally interact with my city council.
+
+// Question 2:
+// One best practice I've learned at CTD that I didn't know the why behind is camelCase. I understood it was easier to read, but I was curious why spaces weren't an option and how camelCase became the standard when other options exist. I looked into it and learned that camelCase became the norm largely because early programming languages couldn't use spaces in variable names, so developers needed a readable alternative. It spread because influential languages like C and Java adopted it, and the convention was passed down from there. I plan to keep exploring this through YouTube and by asking Claude to point me toward resources on programming history and conventions.
+
+
