@@ -207,8 +207,14 @@ console.log("Q3 tipCalculator: ", billTotal3, tipPercentage3, tipCalculator (bil
 //  Q4 multiplyThese: 10 10 100
 
 // PUT YOUR CODE HERE
+const num1 = 200;
+const num2 = 3000;
 
+const multiplyThese = function (num1, num2) {
+    return num1 * num2
+}
 
+console.log("Q4 multiplyThese: ", num1, num2, multiplyThese(num1, num2));
 
 // ---------- QUESTION 5 ----------
 // Create a function called 'getAverage' that takes 2 parameters and returns their average. NOTE: In some programming languages, the types of numbers you use in equations can effect what type of number (integer/floating point) you get as a result. We suggest using 2.0 instead of 2 as you're calculating the average.
