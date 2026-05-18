@@ -456,6 +456,72 @@ console.log("Q9 getLetterGrade: ", getLetterGrade(101));
 
 // PUT YOUR CODE HERE
 
+// const passed = function (letterGrade) {
+//     // I still need to handle values other than A,B,C,D or F passed in.
+//     if (letterGrade === "A" || letterGrade === "B" || letterGrade === "C" ) {
+//         return true; 
+//     } else if (letterGrade === "D" || letterGrade === "F") {
+//         return false;
+//     } else if (letterGrade !== "A" || letterGrade !== "A" || letterGrade !== "A" || letterGrade !== "A" || letterGrade !== "A")  
+// }
+
+
+// I decided to rewrite my code into a switch statement instead for readability.
+
+
+// const passed = function (letterGrade) {
+//     switch (letterGrade) {
+//         case "A":
+//             return true;
+//         case "B":
+//             return true;
+//         case "C":
+//             return true;
+//         case "D":
+//             return false;
+//         case "F":
+//             return false;
+//         default: 
+//             return "Enter a valid grade."
+//     }
+// }
+
+// Claude said I can stack multiple cases together when they do the same thing to avoid repetition. 
+
+
+const passed = function (letterGrade) {
+    letterGrade = letterGrade.toUpperCase();
+    switch (letterGrade) {
+        case "A":
+        case "B":
+        case "C":
+            return true;
+        case "D":
+        case "F":
+            return false;
+        default: 
+            return "Enter a valid grade."
+    }
+}
+
+console.log("Q10 passed('A'): ", passed('A'));
+console.log("Q10 passed('B'): ", passed('B'));
+console.log("Q10 passed('C'): ", passed('C'));
+console.log("Q10 passed('D'): ", passed('D'));
+console.log("Q10 passed('F'): ", passed('F'));
+console.log("Q10 passed('G'): ", passed('G'));
+console.log("Q10 passed(''): ", passed(''));
+console.log("Q10 passed('a'): ", passed('a'));
+console.log("Q10 passed('b'): ", passed('b'));
+
+
+// The function is not lowercase sensitive. If the parameter is entered as a lowercase, enter a valid grade is returned. I need to fix that. I can do that by converting the parameter, which is a letter grade, toUpperCase. I would add that string method before the switch statement to ensure we are comparing apples to apples. 
+
+// Awesome! Everything works as expected now! 
+
+
+
+
 
 // ---------- QUESTION 11 ----------
 // Create a function named printClassResult (className, student, scores) that utilizes all three functions to output information on a student.
