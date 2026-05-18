@@ -420,6 +420,31 @@ console.log("Q8 calculateAverage: ", calculateAverage([100, 100, 100]));
 
 // PUT YOUR CODE HERE
 
+const getLetterGrade = function (average) {
+    if (average < 60) {
+        return "F";
+    } else if (average >= 60 && average <= 69) {
+        return "D";
+    } else if (average >= 70 && average <= 79) {
+        return "C";
+    } else if (average >= 80 && average <= 89) {
+        return "B";
+    } else if (average >= 90 && average <= 100) {
+        return "A";
+    } else return "Enter a valid grade";
+}
+
+console.log("Q9 getLetterGrade: ", getLetterGrade(95));
+console.log("Q9 getLetterGrade: ", getLetterGrade(-10));
+console.log("Q9 getLetterGrade: ", getLetterGrade(10));
+console.log("Q9 getLetterGrade: ", getLetterGrade(67));
+console.log("Q9 getLetterGrade: ", getLetterGrade(70));
+console.log("Q9 getLetterGrade: ", getLetterGrade(85));
+console.log("Q9 getLetterGrade: ", getLetterGrade(101));
+
+
+// hmmm responses over 100 result in a grade of undefined. I added one more statement that says Enter a valid grade. 
+
 
 // ---------- QUESTION 10 ----------
 // Create a 3rd function named - passed(letterGrade) - that returns true if a student's grade is A, B or C, false otherwise. Make sure you handle a value other than A,B,C,D or F passed in.
