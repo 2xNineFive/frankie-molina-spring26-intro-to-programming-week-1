@@ -267,6 +267,47 @@ console.log("Q5 getAverage: ", 200, 300, getAverage(200, 300));
 // PUT YOUR CODE HERE
 
 
+const isPrime = function (number) {
+    if (number === 0 || number === 1) {
+        return false;
+    } else if (number === 2) {
+        return true;
+    } else if (number > 2) {
+        for (let i = 3; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        } 
+    }
+    return true;
+}
+
+console.log("Q6 isPrime: ", 0, isPrime(0));
+console.log("Q6 isPrime: ", 1, isPrime(1));
+console.log("Q6 isPrime: ", 2, isPrime(2));
+console.log("Q6 isPrime: ", 3, isPrime(3));
+console.log("Q6 isPrime: ", 12, isPrime(12));
+console.log("Q6 isPrime: ", 29, isPrime(29));
+
+// I was curious why we used the square root. So I chatted with Claude about it. Here's that conversation: 
+
+// why did we use the square root though? Is that a trick so that the for loop doesn't run a huge calculation when the number gets super big?11:26 AMClaude responded: Exactly right — great intuition.Exactly right — great intuition.
+// Here's the math behind it. If a number has a divisor larger than its square root, it must also have a corresponding divisor smaller than its square root. They come in pairs.
+// For example take 36. Its square root is 6. The factor pairs are:
+
+// 2 × 18
+// 3 × 12
+// 4 × 9
+// 6 × 6
+
+// Notice that one number in every pair is always 6 or below. So if you've checked everything up to 6 and found nothing, there's nothing to find above 6 either.
+// So instead of checking every number up to 36, you only check up to 6. Now imagine doing that with a number like 1,000,000 — instead of 999,998 checks you only need 1,000. That's a massive performance win.
+// In computer science that's called optimization — making your code faster without changing what it does. You stumbled into a classic one. 🤙
+
+
+// I think this ties into what we were learning about this week about algorithms. It seems like using this square root approach to finding numbers helps optimize our searching algorithm. This may not seem like a big deal now, but if for some reason I were computing large calculations, it would make sense to find intelligent ways to optimize them. 
+
+
 // ---------- QUESTION 7 ----------
 // Using the 'isPrime' function created in the previous question, create another function named 'getPrimesUpTo' that takes an integer as an input and returns an array of all primes up to and including the input number. 
 // Be sure to include several test cases
