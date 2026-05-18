@@ -340,7 +340,7 @@ console.log("Q7 getPrimesUpTo: ", -19, getPrimesUpTo(-19));
 
 
 
-// A big was introduced with my original isPrimes function. I thought the loop did not need to start at 2 because that case was being handled in the conditional statements. But it needed to be included so that getPrimesUpTo could function properly. Since it was initially starting at 3, numbers divisble by 2 were not being checked and so they were being passed into the getPrimesUpToArray. 
+// A bug was introduced with my original isPrimes function. I thought the loop did not need to start at 2 because that case was being handled in the conditional statements. But it needed to be included so that getPrimesUpTo could function properly. Since it was initially starting at 3, numbers divisble by 2 were not being checked and so they were being passed into the getPrimesUpToArray. 
 
 // I was also bothered by the fact that negative numbers are not truly prime numbers but negative numbers could get passed in and result as true in isPrime. So I updated isPrime to handle negative numbers too. 
 
@@ -360,6 +360,49 @@ console.log("Q7 getPrimesUpTo: ", -19, getPrimesUpTo(-19));
 //  Q8 calculateAverage: 85 // input array let scores = [90, 80, 85];
 
 // PUT YOUR CODE HERE
+// const calculateAverage = function (gradesArray) {
+//     let result = 0;
+//     // I need to create a variable to store my result.
+
+//     // I need a for loop to iterate through each grade in the array and sum up the total. 
+
+//     for (let i = 0; i <= gradesArray.length - 1; i++) {
+//         if (i < 0 || i <= 100) {
+//             result = result + gradesArray[i] / gradesArray.length;
+//         }
+
+//     } 
+//     return result;
+
+//     // Then I need to divide the result by gradesArray.length to get the average. 
+
+
+
+const calculateAverage = function (gradesArray) {
+let result = 0;
+let validGrades = [];
+
+    for (let i = 0; i <= gradesArray.length - 1; i++) {
+        if (gradesArray[i] >= 0 && gradesArray[i] <= 100) {
+            validGrades.push(gradesArray[i]);
+
+            result = result + gradesArray[i];
+        }
+    } 
+    if (validGrades.length === 0) {
+        return "No Grades were inputted or no grades were valid."
+    } else return result / validGrades.length;
+}
+
+console.log("Q8 calculateAverage: ", calculateAverage([1, 2, 3]));
+console.log("Q8 calculateAverage: ", calculateAverage([0, 0, 0]));
+console.log("Q8 calculateAverage: ", calculateAverage([-2, -2, -2]));
+console.log("Q8 calculateAverage: ", calculateAverage([101, 98, 103]));
+console.log("Q8 calculateAverage: ", calculateAverage([100, 100, 100]));
+
+
+// I got stuck several time so I needed to go to Claude and tell him to ask me 3 questions each time I got stuck. I need to remember that I need to use the bracket notation to access the value of i rather than i itself when I am trying to use the contents of the array. That caused issues for me. I was also overcomplicating the problem to handle only number <= 0 and >=100. Claude caught the mistakes I made in that logic, but I didn't. So I need to find a way to think better about conditions. 
+
 
 
 // ---------- QUESTION 9 ----------
