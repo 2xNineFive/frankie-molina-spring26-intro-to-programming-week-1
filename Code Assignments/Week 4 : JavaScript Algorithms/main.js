@@ -226,6 +226,32 @@ console.log("Q4 multiplyThese: ", num1, num2, multiplyThese(num1, num2));
 
 // PUT YOUR CODE HERE
 
+const getAverage = function (num1, num2) {
+    // let number1 = Number(num1.toFixed(1)) 
+    // let number2 = Number(num2.toFixed(1)) 
+    // const result = (number1 + number2) / 2;
+    const result = (num1 + num2) / 2;
+    // return result;
+    return Number(result.toFixed(1));
+}
+
+console.log("Q5 getAverage: ", 3, 6, getAverage(3, 6));
+console.log("Q5 getAverage: ", 3, 6, getAverage(3.0, 6.0));
+console.log("Q5 getAverage: ", 4.23, 6.45, getAverage(4.23, 6.45));
+console.log("Q5 getAverage: ", 4.2, 6.4, getAverage(4.2, 6.4));
+console.log("Q5 getAverage: ", 200, 300, getAverage(200, 300));
+
+// I went ahead and researched methods to handle what type of number I get as a result. I chose the Number() method because .toFixed returns a string, and Number() converts that string back to a number inside the function getAverage. That way I don't have to remember to type 2.0 instead of 2. 
+
+// Me and Claude went back and forth about our reasoning. My code does change the input a bit by rounding. I agree with that, and Claude suggested I round the output instead. So we agreed on that approach. 
+
+// Round the result not the inputs, so the function stays accurate while still returning a clean decimal. Using toFixed(1) on the inputs before calculating silently corrupts the math. Using it on the result after calculating gives you clean output without affecting accuracy.
+// Note the tradeoff too — toFixed(1) always rounds to one decimal place, so if a result naturally has more meaningful decimals (like 5.347), you'd lose that precision. Keep that in mind for future use cases where precision matters more. But I can change the parameter of toFixed to more decimal places if I want to. 
+
+// The instructions say to use 2.0 instead of 2 as a cross-language habit, but in JavaScript they are identical. JS treats all numbers the same way regardless of whether you write a decimal point or not. I guess using the Numbers method was unnecessary in the case of JS but I just wanted to avoid any issues to begin with.
+
+
+
 
 
 // ---------- QUESTION 6 ----------
