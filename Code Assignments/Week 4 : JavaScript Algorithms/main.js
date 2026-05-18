@@ -268,14 +268,14 @@ console.log("Q5 getAverage: ", 200, 300, getAverage(200, 300));
 
 
 const isPrime = function (number) {
-    if (number === 0 || number === 1) {
+    if (number <= 0 || number === 1) {
         return false;
     } else if (number === 2) {
         return true;
     } else if (number > 2) {
-        for (let i = 3; i <= Math.sqrt(number); i++) {
+        for (let i = 2; i <= Math.sqrt(number); i++) {
             if (number % i === 0) {
-                return false;
+                 return false;
             }
         } 
     }
@@ -288,6 +288,7 @@ console.log("Q6 isPrime: ", 2, isPrime(2));
 console.log("Q6 isPrime: ", 3, isPrime(3));
 console.log("Q6 isPrime: ", 12, isPrime(12));
 console.log("Q6 isPrime: ", 29, isPrime(29));
+console.log("Q6 isPrime: ", -3, isPrime(-3));
 
 // I was curious why we used the square root. So I chatted with Claude about it. Here's that conversation: 
 
@@ -318,6 +319,33 @@ console.log("Q6 isPrime: ", 29, isPrime(29));
 //  Q7 getPrimesUpTo: 13 [2,3,5,7,11,13]
 
 // PUT YOUR CODE HERE
+
+
+const getPrimesUpTo = function (number) {
+    const result = [];
+    for (let i = 2; i <= number; i++) {
+        if (isPrime(i) === true) {
+            result.push(i);
+        }
+    }
+    return result;
+}
+
+
+console.log("Q7 getPrimesUpTo: ", 0, getPrimesUpTo(0));
+console.log("Q7 getPrimesUpTo: ", 2, getPrimesUpTo(2));
+console.log("Q7 getPrimesUpTo: ", 3, getPrimesUpTo(3));
+console.log("Q7 getPrimesUpTo: ", 19, getPrimesUpTo(19));
+console.log("Q7 getPrimesUpTo: ", -19, getPrimesUpTo(-19));
+
+
+
+// A big was introduced with my original isPrimes function. I thought the loop did not need to start at 2 because that case was being handled in the conditional statements. But it needed to be included so that getPrimesUpTo could function properly. Since it was initially starting at 3, numbers divisble by 2 were not being checked and so they were being passed into the getPrimesUpToArray. 
+
+// I was also bothered by the fact that negative numbers are not truly prime numbers but negative numbers could get passed in and result as true in isPrime. So I updated isPrime to handle negative numbers too. 
+
+// I also noticed the example log comment provided by the school had an error — it showed isPrime(number) instead of getPrimesUpTo(number). I caught this because my output didn't look right, so I traced it back to the log and found the issue. Fixed it on my own.
+
 
 
 // ---------- QUESTION 8 ----------
