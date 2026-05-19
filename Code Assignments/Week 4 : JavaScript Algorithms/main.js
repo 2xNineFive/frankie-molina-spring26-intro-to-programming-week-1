@@ -535,6 +535,56 @@ console.log("Q10 passed('b'): ", passed('b'));
 // PUT YOUR CODE HERE
 
 
+// const printClassResult = function (className, student, scores) {
+//     const averageScore = calculateAverage(scores);
+//     const letterGrade = getLetterGrade(averageScore);
+//     const didPass = passed(letterGrade);
+//     if (didPass === true) {
+//         return "yes";
+//     } return "no"
+
+//     return `Student: ${student}, Average: ${averageScore}, Grade: ${letterGrade}, Passed: ${didPass}`
+
+// }
+
+
+// console.log("Q11: ", printClassResult ("History 101", "Jane Doe", [60, 70, 85, 87]));
+
+// This is where I am at so far. I want to make the output say exactly what expected output is. So I need to find a way to make the pass statement say yes or no. I am trying to wrap my head around it, and I think I got it! 
+
+
+const printClassResult = function (className, student, scores) {
+    const averageScore = calculateAverage(scores);
+    const letterGrade = getLetterGrade(averageScore);
+    let didPass = passed(letterGrade);
+
+
+
+    switch (didPass) {
+        case true : 
+            didPass =  "yes";
+            break;
+        case false : 
+            didPass = "no"
+            break;
+    }
+    
+    return `${className} - Student: ${student}, Average: ${averageScore}, Grade: ${letterGrade}, Passed: ${didPass}`
+
+}
+
+
+console.log("Q11: ", printClassResult ("History 101", "Jane Doe", [60, 70, 85, 87]));
+console.log("Q11: ", printClassResult ("History 101", "Jane Doe", [60, 70, 0, 8]));
+console.log("Q11: ", printClassResult ("History 101", "Jane Doe", [600, 700, 0, -20]));
+console.log("Q11: ", printClassResult ("History 101", "Jane Doe", [600, 700, 60, -20]));
+console.log("Q11: ", printClassResult ("History 101", "Jane Doe", [600, 700, 80, -20]));
+console.log("Q11: ", printClassResult ("History 101", "Jane Doe", [600, 700, 98, -20]));
+console.log("Q11: ", printClassResult ("History 101", "Jane Doe", [30, 100, 40, 95]));
+
+
+
+
 // ---------- QUESTION 12 ----------
 // Now, let's see how to use a callback. First, create a function that simulates pushing a button. Name the function buttonPushed and log the message "The button was pushed!" in the function.
 
