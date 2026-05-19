@@ -597,6 +597,13 @@ console.log("Q11: ", printClassResult ("History 101", "Jane Doe", [30, 100, 40, 
 // PUT YOUR CODE HERE
 
 
+const buttonPushed = function () {
+    console.log("Q12, Q13: The button was pushed!");
+}
+ 
+// buttonPushed();
+
+
 // ---------- QUESTION 13 ----------
 // Now, create a function called simulateButtonPush and pass the function created in question 12 to that function.
 
@@ -607,3 +614,13 @@ console.log("Q11: ", printClassResult ("History 101", "Jane Doe", [30, 100, 40, 
 //  The button was pushed!
 
 // PUT YOUR CODE HERE
+
+
+const simulateButtonPush = function (action) {
+    action();
+}
+
+simulateButtonPush(buttonPushed);
+
+
+// This concept of callbacks is tripping me up a bit. But I think I am getting the gist of it. I think what we're doing here is that we are not trying to pass the value of the function into another function. What we're doing is sharing instructions that can be used later. So this way, functions can communicate with one another dynamically. 
