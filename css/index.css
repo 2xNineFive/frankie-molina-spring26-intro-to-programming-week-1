@@ -113,3 +113,21 @@ nav a:hover {
     padding: 0;
     flex-wrap: wrap;
 }
+
+/* updating Experience Section  */
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.job-title {
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.job-date {
+    color: #0066FF;
+    font-weight: 700;
+}
