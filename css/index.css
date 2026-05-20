@@ -7,6 +7,8 @@
    Light:  #ffffff
 */
 
+/* Working on Base Style */
+
 body {
     background-color: #ffffff;
     color: #1a1a1a;
@@ -63,4 +65,51 @@ ul li {
     padding-left: 8px;
     border-left: 3px solid #00BB33;
     list-style: none;
+}
+
+/* Working on NAV */
+
+nav {
+    background-color: #1a1a1a;
+    padding: 16px 20px;
+    border-bottom: 4px solid #FFB300;
+    position: sticky;
+    top: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Sedgwick Ave Display', cursive;
+    font-size: 20px;
+    border-bottom: none;
+}
+
+nav a:hover {
+    color: #FF1744;
+}
+
+
+/* flexbox section */
+
+#Experience ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0;
+}
+
+#Connect ul {
+    display: flex;
+    gap: 24px;
+    padding: 0;
+    flex-wrap: wrap;
 }
