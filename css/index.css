@@ -9,10 +9,23 @@
 
 /* Working on Base Style */
 
-body {
-    background-color: #ffffff;
+/* body {
+    background-color: #F5F5F5;
     color: #1a1a1a;
     font-family: 'Nunito', sans-serif;
+} */
+
+body {
+    background-color: #ffffff;
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+    color: #1a1a1a;
+    font-family: 'Nunito', sans-serif;
+
+    /* background-image: radial-gradient(rgba(0,0,0,0.1) 1px, transparent 1px);
+    background-size: 20px 20px; */
 }
 
 h1, h2, h3 {
