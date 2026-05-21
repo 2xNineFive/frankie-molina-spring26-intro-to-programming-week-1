@@ -150,3 +150,20 @@ nav a:hover {
     gap: 16px;
 }
 
+
+
+/* Media Query - Sizing for Tablets */
+@media (max-width: 768px) {
+    #Skills ul {
+        flex-direction: column
+    }
+}
+
+
+/* Media Query - Sizing for Phones */
+@media (max-width: 480px) {
+    #Skills ul {
+        flex-direction: column;
+        gap: 25px;
+    }
+}
