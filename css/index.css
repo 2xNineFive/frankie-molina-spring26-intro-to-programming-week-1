@@ -144,3 +144,9 @@ nav a:hover {
     color: #0066FF;
     font-weight: 700;
 }
+
+#Skills ul {
+    display: flex;
+    gap: 16px;
+}
+
