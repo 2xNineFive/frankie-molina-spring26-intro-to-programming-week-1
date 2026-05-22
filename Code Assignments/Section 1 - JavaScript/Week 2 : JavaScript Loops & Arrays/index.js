@@ -158,15 +158,16 @@ const noVowels = function (string) {
     const vowels = ['a', 'e', 'i', 'o', 'u'];
     let result =''
     for (const letter of string) {
-        if (!vowels.includes(letter)) {
+        if (!vowels.includes(letter.toLowerCase())) {
             result += letter;
         }
     } return result;
 }
 console.log(`Q3: ${noVowels('Code')}`);
+console.log(`Q3: ${noVowels('CodE')}`);
 
 
-
+// fixed noVowels by adding the toLowerCase method to catch capital vowels too
 
 // ---------- QUESTION 4 ----------
 // Write a function called 'vowelCount' that takes 1 string 
