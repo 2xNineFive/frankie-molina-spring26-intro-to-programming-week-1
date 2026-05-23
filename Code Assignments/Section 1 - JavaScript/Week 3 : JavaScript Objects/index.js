@@ -380,5 +380,5 @@ console.log("Q9: Current Date: " + currentDate);
 // PUT YOUR CODE HERE
 
 console.log("Q10 Year:", currentDate.getFullYear());
-console.log("Q10 Month:", currentDate.getMonth());
+console.log("Q10 Month:", currentDate.getMonth() + 1);
 console.log("Q10 Day:", currentDate.getDate());

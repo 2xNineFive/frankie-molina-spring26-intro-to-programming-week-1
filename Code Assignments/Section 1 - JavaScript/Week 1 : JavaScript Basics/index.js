@@ -256,7 +256,7 @@ const magic8BallSays2 = function () {
     }
 }
 
-console.log(`Q9.1: ${magic8BallSays2()}`);
+console.log(`Q9 - Stretch: ${magic8BallSays2()}`);
 
 // Don't forget your console.logs!
 
@@ -363,7 +363,7 @@ const word1 = `I actually learned so much from Week 1!`;
 const word2 = `I can't wait until I master coding!`;
 // const word2 = '';
 
-const biggesStringLength = function (word1, word2) {
+const biggestStringLength = function (word1, word2) {
     const one = word1.length;
     const two = word2.length;
     const answer = function () {
@@ -378,7 +378,7 @@ const biggesStringLength = function (word1, word2) {
     return answer();
 }
 
-console.log(`Q15: ${biggesStringLength(word1, word2)}`);
+console.log(`Q15: ${biggestStringLength(word1, word2)}`);
 
 
 
