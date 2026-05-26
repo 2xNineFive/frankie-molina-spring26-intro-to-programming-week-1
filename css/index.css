@@ -182,8 +182,8 @@ nav a:hover {
 
 
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
     .about-columns {
         grid-template-columns: 1fr;
     }
-} */
+}
