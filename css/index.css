@@ -54,7 +54,10 @@ h3 {
 }
 
 p {
-    max-width: 800px;
+    font-family: "Finger Paint", sans-serif;
+    font-size: 1.1rem;
+    /* max-width: 800px; */
+    font-weight: bold; 
     line-height: 1.8;
 }
 
@@ -145,7 +148,7 @@ nav a:hover {
     font-weight: 700;
 }
 
-#Skills ul {
+#skills ul {
     display: flex;
     gap: 16px;
 }
@@ -167,3 +170,20 @@ nav a:hover {
         gap: 25px;
     }
 }
+
+
+
+#About p {
+    column-count: 3;
+    column-gap: 32px;
+    /* column-rule: 4px solid #1a1a1a; */
+    max-width: 100%;
+}
+
+
+
+/* @media (max-width: 768px) {
+    .about-columns {
+        grid-template-columns: 1fr;
+    }
+} */
