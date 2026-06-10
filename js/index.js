@@ -32,7 +32,7 @@ selectFooter.append(copyright);
 
 // build skills array via DOM 
 const skills = ["JavaScript", "DOM", "HTML", "CSS"];
-const skillsSection = document.querySelector('#Skills');
+const skillsSection = document.querySelector('#skills');
 // console.log(skillsSection);
 
 const skillsList = skillsSection.querySelector('ul');
