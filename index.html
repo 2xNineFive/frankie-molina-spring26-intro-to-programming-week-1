@@ -6,7 +6,11 @@
         <meta name="author" content="Frankie Molina">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+        <!-- <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&family=Nunito:wght@400;700&display=swap" rel="stylesheet"> -->
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&family=Finger+Paint&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="css/index.css">
     </head>
@@ -23,6 +27,8 @@
                 <li class="menu-item"><a href="#Skills">Skills</a></li>
 
                  <li class="menu-item"><a href="#Connect">Connect</a></li>
+                 
+                 <li class="menu-item"><a href="#leave-message">Leave a Message</a></li>
                 
             </ul>
         </nav>
@@ -36,7 +42,7 @@
             I am 30 years young, and I am proudly born and raised in the Coachella Valley. I identify as a neurodivergent and Latinx serial entrepreneur, artist, and activist. I am clinically diagnosed with ADHD and Bipolar 2, and I self-identify as autistic. I channel my neurodivergence into everything I do — from my EDM project ALYVE and digital art project BPLR, to my YouTube channel Frankie's World, where I document everything I'm building in real time.
             
             I recently completed the Generative AI Foundations for Creativity certification through College of the Desert & PaCE, scoring 956 out of 1000 on my Certiport exam. My professor recognized my capstone project as the most emotionally impactful in the class. Simultaneously, I'm pursuing my MBA in Entrepreneurship at Oneday, where I'm building two ventures: Coachella Valley Home Reset, a residential electrical company, and NeuroBoss, a productivity app designed specifically for neurodivergent entrepreneurs.
-            
+
             My MBA mentor Eve recommended I add Data Engineering to my skill set through Code the Dream — so here I am. My goal is to combine all of these skills to fulfill a childhood dream of escaping poverty. But personal success is only part of the mission. I want to create structural change in my communities and help others find their way out too.
         </p>
         </section>
@@ -92,7 +98,7 @@
             </ul>
         </section>
 
-        <section id="Skills">
+        <section id="skills">
             <h2>Skills</h2>
             <ul>
                 
@@ -108,6 +114,26 @@
             <li> <a href="https://soundcloud.com/officialmakemusicnow">SoundCloud </a> </li>
         </ul>
         </section>
+
+        <section id="leave-message">
+        <h2>Leave a Message</h2>
+            <form name="leave_message">
+
+                <label for="usersName">Name</label>
+                <input id="usersName" name = "usersName" required>
+
+                <label for="usersEmail">Email</label>
+                <input id="usersEmail" type="email" name = "usersEmail" required>
+
+                <label for="usersMessage">Message</label>
+                <textarea id="usersMessage" name="usersMessage" required></textarea>
+
+                <button type="submit">Submit</button>
+
+            </form>
+        </section>
+    
+        <footer></footer>
 
         <script src="js/index.js"></script>
     </body>
