@@ -113,7 +113,7 @@ console.log(totalWeightNotElectric);
 // PUT YOUR CODE HERE
 
 const repeat = function (integer) {
-    for (let i = 0; i < integer; i++) console.log('Hello World');
+    for (let i = 0; i < integer; i++) console.log('Hello World!');
 }
 
 repeat(3);
@@ -213,7 +213,7 @@ const vowelCount = function (string) {
     for (const letter of string) {
         if (vowels.includes(letter.toLowerCase())) {
             result += 1
-            console.log(result)
+            // console.log(result)
         }
         
     } return result;
@@ -640,7 +640,7 @@ const makeSquares = function (array) {
     return squaredArray;
 }
 
-console.log(`Q11: ${makeSquares(copyArray)}`);
+console.log(`Q12: ${makeSquares(copyArray)}`);
 
 
 
