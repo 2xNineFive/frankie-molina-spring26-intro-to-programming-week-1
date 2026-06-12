@@ -49,3 +49,53 @@ for (let i = 0; i <= skills.length - 1; i++) {
 
 
 // -----------------------------------------------------------------
+
+// Handle Message Submit Form
+
+const messageForm = document.querySelector("[name=leave_message]");
+
+messageForm.addEventListener('submit', e => {
+
+
+    // All this code captures the data in the form when the user taps submit
+    
+    // prevents website from refreshing
+    e.preventDefault();
+
+    const name = e.target.usersName.value;
+    console.log(name);
+
+    const email = e.target.usersEmail.value;
+    console.log(email);
+
+    const message = e.target.usersMessage.value;
+    console.log(message);
+
+    e.target.reset();
+
+
+    // This code adds the form information to the Messages section
+    const messageSection = document.querySelector('#messages');
+    const messageList = messageSection.querySelector('ul');
+
+    const newMessage = document.createElement("li");
+    newMessage.innerHTML = `
+    <a href="mailto:${email}">${name}</a>
+    <span>${message}</span>
+    `;
+
+
+    // This code adds the remove button feature
+    const removeButton = document.createElement('button');
+    removeButton.innerText = 'remove';
+    removeButton.type = 'button';
+
+    removeButton.addEventListener('click', e => {
+        const entry =removeButton.parentNode
+        entry.remove();
+    })
+    
+    newMessage.appendChild(removeButton);
+    messageList.appendChild(newMessage);
+
+});
