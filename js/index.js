@@ -32,7 +32,7 @@ selectFooter.append(copyright);
 
 // build skills array via DOM 
 const skills = ["JavaScript", "DOM", "HTML", "CSS"];
-const skillsSection = document.querySelector('#Skills');
+const skillsSection = document.querySelector('#skills');
 // console.log(skillsSection);
 
 const skillsList = skillsSection.querySelector('ul');
@@ -49,3 +49,65 @@ for (let i = 0; i <= skills.length - 1; i++) {
 
 
 // -----------------------------------------------------------------
+
+// Handle Message Submit Form
+
+const messageForm = document.querySelector("[name=leave_message]");
+
+messageForm.addEventListener('submit', e => {
+
+
+    // All this code captures the data in the form when the user taps submit
+    
+    // prevents website from refreshing
+    e.preventDefault();
+
+
+    const name = e.target.usersName.value;
+    console.log(name);
+
+    const email = e.target.usersEmail.value;
+    console.log(email);
+
+    const message = e.target.usersMessage.value;
+    console.log(message);
+
+
+    // This line resets the form to empty
+    e.target.reset();
+
+    // This code saves the users info and adds the form info to the Messages section
+    const messageSection = document.querySelector('#messages');
+
+    // adding hide messages feature by default
+    messageSection.style.display = "block";
+
+    const messageList = messageSection.querySelector('ul');
+
+    const newMessage = document.createElement("li");
+    newMessage.innerHTML = `
+    <a href="mailto:${email}">${name}</a>
+    <span>${message}</span>
+    `;
+
+
+    // This code adds the remove button feature to a messages in the messages section. Done via DOM. 
+    const removeButton = document.createElement('button');
+    removeButton.innerText = 'remove';
+    removeButton.type = 'button';
+
+    removeButton.addEventListener('click', e => {
+        const entry = removeButton.parentNode
+        entry.remove();
+
+        // adding hide feature if ul is empty
+        if (messageList.children.length === 0) {
+            messageSection.style.display = "none";
+        }
+    })
+
+    // This code adds the remove button for the message to be deleted and it also adds a message
+    newMessage.appendChild(removeButton);
+    messageList.appendChild(newMessage);
+
+});
