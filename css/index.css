@@ -232,3 +232,8 @@ nav a:hover {
 
 }
 
+/* Stretch Goals - Hiding Messages */
+
+#messages {
+    display: none;
+}

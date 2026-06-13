@@ -62,6 +62,7 @@ messageForm.addEventListener('submit', e => {
     // prevents website from refreshing
     e.preventDefault();
 
+
     const name = e.target.usersName.value;
     console.log(name);
 
@@ -71,11 +72,16 @@ messageForm.addEventListener('submit', e => {
     const message = e.target.usersMessage.value;
     console.log(message);
 
+
+    // This line resets the form to empty
     e.target.reset();
 
-
-    // This code adds the form information to the Messages section
+    // This code saves the users info and adds the form info to the Messages section
     const messageSection = document.querySelector('#messages');
+
+    // adding hide messages feature by default
+    messageSection.style.display = "block";
+
     const messageList = messageSection.querySelector('ul');
 
     const newMessage = document.createElement("li");
@@ -85,16 +91,22 @@ messageForm.addEventListener('submit', e => {
     `;
 
 
-    // This code adds the remove button feature
+    // This code adds the remove button feature to a messages in the messages section. Done via DOM. 
     const removeButton = document.createElement('button');
     removeButton.innerText = 'remove';
     removeButton.type = 'button';
 
     removeButton.addEventListener('click', e => {
-        const entry =removeButton.parentNode
+        const entry = removeButton.parentNode
         entry.remove();
+
+        // adding hide feature if ul is empty
+        if (messageList.children.length === 0) {
+            messageSection.style.display = "none";
+        }
     })
-    
+
+    // This code adds the remove button for the message to be deleted and it also adds a message
     newMessage.appendChild(removeButton);
     messageList.appendChild(newMessage);
 
