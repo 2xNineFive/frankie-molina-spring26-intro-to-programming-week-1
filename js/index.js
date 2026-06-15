@@ -111,3 +111,42 @@ messageForm.addEventListener('submit', e => {
     messageList.appendChild(newMessage);
 
 });
+
+
+
+
+// Fetch call that makes GET request to GitHub
+// This code uses the Fetch API to retreive the repos from my GitHub account. 
+
+fetch('https://api.github.com/users/2xNineFive/repos')
+    .then(response => {
+        if (!response.ok) {
+        throw new Error('Request failed');
+        }
+        return response.json();
+    })
+
+    .then(data => {
+        const repositories = data;
+        console.log(repositories);
+
+        // Adding Repos to Projects section
+
+        // selecting the projects section
+        const projectSection = document.querySelector('#Projects');
+
+        // selecting the projects section ul
+        const projectList = projectSection.querySelector('ul');
+
+        // using forLoop to iterate over GitHub repositories
+        for (let i = 0; i < repositories.length; i++) {
+            const project = document.createElement('li');
+            project.innerText = repositories[i].name;
+            projectList.append(project);
+        }
+
+    })
+
+    .catch(error => {
+        console.error('An error occurred:', error);
+    })
