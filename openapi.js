@@ -9,9 +9,17 @@
 
 // I decided to make this variable global since both functions are reading from the DOM.
 
+// const weatherInfo = document.querySelector('#weather_Info');
+
+// The assignment wants buttons to add the info instead rather than just adding it on page load via the DOM. 
+
+
 const weatherInfo = document.querySelector('#weather_Info');
 
-async function fetchEstadioAztecaWeather() {
+
+const getTemperature = document.querySelector("#btn-temperature");
+
+async function fetchEstadioAztecaTemperature() {
   try {
     const response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=19.303&longitude=99.151&hourly=temperature_2m");
     
@@ -36,10 +44,15 @@ async function fetchEstadioAztecaWeather() {
     console.error('An error occurred:', error);
   }
 }
-fetchEstadioAztecaWeather();
+// fetchEstadioAztecaTemperature();
+
+getTemperature.addEventListener('click', e => {
+    fetchEstadioAztecaTemperature();
+});
 
 
 
+const getWindSpeed = document.querySelector("#btn-wind");
 
 async function fetchEstadioAztecaWindSpeed() {
   try {
@@ -64,4 +77,8 @@ async function fetchEstadioAztecaWindSpeed() {
     console.error('An error occurred:', error);
   }
 }
-fetchEstadioAztecaWindSpeed();
+// fetchEstadioAztecaWindSpeed();
+
+getWindSpeed.addEventListener('click', e => {
+    fetchEstadioAztecaWindSpeed();
+});
