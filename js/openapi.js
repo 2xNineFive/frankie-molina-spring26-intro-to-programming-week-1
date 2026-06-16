@@ -36,7 +36,11 @@ async function fetchEstadioAztecaTemperature() {
 
     // const weatherInfo = document.querySelector('#weather_Info');
 
+    // line 40 clears the list every time before adding new data.
+    weatherInfo.innerHTML = '';
+
     const addInfo = document.createElement('li');
+
     addInfo.innerHTML = result;
     weatherInfo.append(addInfo);
 
@@ -69,7 +73,11 @@ async function fetchEstadioAztecaWindSpeed() {
     // console.log(`${time}: ${windSpeed}`)
     const result = `${time}: ${windSpeed}`;
 
+      // line 40 clears the list every time before adding new data.
+    weatherInfo.innerHTML = '';
+
     const addInfo = document.createElement('li');
+
     addInfo.innerHTML = result;
     weatherInfo.append(addInfo);
 
