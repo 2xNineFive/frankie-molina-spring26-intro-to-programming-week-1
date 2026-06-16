@@ -1,14 +1,3 @@
-
-
-
-
-// Add footer
-const footer = document.createElement('footer');
-// footer.innerText = "This is the footer"; just testing to make sure it works. 
-
-document.body.append(footer);
-
-
 // -----------------------------------------------------------------
 
 // Creating copyright text
@@ -54,6 +43,12 @@ for (let i = 0; i <= skills.length - 1; i++) {
 
 const messageForm = document.querySelector("[name=leave_message]");
 
+// This code saves the users info and adds the form info to the Messages section
+const messageSection = document.querySelector('#messages');
+
+// adding hide messages feature by default
+ messageSection.style.display = "none";
+
 messageForm.addEventListener('submit', e => {
 
 
@@ -62,6 +57,7 @@ messageForm.addEventListener('submit', e => {
     // prevents website from refreshing
     e.preventDefault();
 
+    messageSection.style.display = "block"
 
     const name = e.target.usersName.value;
     console.log(name);
@@ -75,12 +71,6 @@ messageForm.addEventListener('submit', e => {
 
     // This line resets the form to empty
     e.target.reset();
-
-    // This code saves the users info and adds the form info to the Messages section
-    const messageSection = document.querySelector('#messages');
-
-    // adding hide messages feature by default
-    messageSection.style.display = "block";
 
     const messageList = messageSection.querySelector('ul');
 
