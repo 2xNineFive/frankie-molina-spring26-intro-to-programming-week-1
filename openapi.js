@@ -82,3 +82,10 @@ async function fetchEstadioAztecaWindSpeed() {
 getWindSpeed.addEventListener('click', e => {
     fetchEstadioAztecaWindSpeed();
 });
+
+// Known limitations:
+// 1. Data is hardcoded to a single timestamp (index [0]) rather than dynamic/current data
+
+// 2. Clicking buttons repeatedly appends duplicate entries to the DOM
+// Future fix: add a conditional to check if the ul already has a child node before appending
+
