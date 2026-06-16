@@ -13,10 +13,10 @@ document.body.append(footer);
 
 // Creating copyright text
 const today = new Date();
-console.log(today)
+// console.log(today)
 
 const thisYear = today.getFullYear();
-console.log(thisYear);
+// console.log(thisYear);
 
 
 // -----------------------------------------------------------------
@@ -128,7 +128,7 @@ fetch('https://api.github.com/users/2xNineFive/repos')
 
     .then(data => {
         const repositories = data;
-        console.log(repositories);
+        // console.log(repositories);
 
         // Adding Repos to Projects section
 
